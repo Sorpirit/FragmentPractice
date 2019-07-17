@@ -12,6 +12,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Add"/>
+    <Button
+        android:id="@+id/RemoveFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Remove"/>
+    <Button
+        android:id="@+id/ReplaceFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Replace"/>
 
     <LinearLayout
         android:id="@+id/content"

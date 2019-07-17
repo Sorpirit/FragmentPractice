@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FilmPage">
+    tools:context=".FilmPage"
+    android:background="@color/colorPrimaryDark">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -24,15 +25,12 @@
                 android:textStyle="bold"
                 android:layout_margin="16sp"/>
 
-            <WebView
-                android:id="@+id/Poster"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="5sp"/>
             <TextView
                 android:id="@+id/Description"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="some text here"/>
 
         </LinearLayout>
     </ScrollView>

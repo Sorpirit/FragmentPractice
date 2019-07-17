@@ -10,6 +10,8 @@ import android.widget.Button;
 public class MainActivity extends FragmentActivity {
 
     private Button add;
+    private Button replace;
+    private Button remove;
 
     private FilmPage page;
     private FilmsList list;
@@ -22,7 +24,9 @@ public class MainActivity extends FragmentActivity {
         setContentView(R.layout.activity_main);
 
         add = findViewById(R.id.AddFragment);
-        page = new FilmPage();
+        replace = findViewById(R.id.ReplaceFragment);
+        remove = findViewById(R.id.RemoveFragment);
+        //page = new FilmPage();
         list = new FilmsList();
     }
 
@@ -32,19 +36,29 @@ public class MainActivity extends FragmentActivity {
         View.OnClickListener listener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                transaction = getSupportFragmentManager().beginTransaction();
+
                 switch (v.getId()){
                     case R.id.AddFragment:
-                        transaction = getSupportFragmentManager().beginTransaction();
-
-                        transaction.add(R.id.content,new FilmPage());
+                        page = new FilmPage();
+                        transaction.add(R.id.content,page);
                         transaction.addToBackStack(null);
-
-                        transaction.commit();
                         break;
+                    case R.id.RemoveFragment:
+                        transaction.remove(page);
+                        break;
+                    case R.id.ReplaceFragment:
+                        transaction.replace(R.id.content,new FilmsList());
+                        transaction.addToBackStack(null);
                 }
+
+                transaction.commit();
             }
         };
         add.setOnClickListener(listener);
+        remove.setOnClickListener(listener);
+        replace.setOnClickListener(listener);
     }
 
     @Override
