@@ -29,5 +29,14 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"></LinearLayout>
 
+    <fragment
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:name="com.practice.fragmentpractice.FilmsList"
+        android:id="@+id/Film_list"
+        tools:layout="@layout/fragment_films_list">
+
+    </fragment>
+
 
 </LinearLayout>

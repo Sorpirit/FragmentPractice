@@ -1,13 +1,13 @@
 package com.practice.fragmentpractice;
 
-import android.support.v4.app.FragmentActivity;
+
+import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class MainActivity extends FragmentActivity {
+public class MainActivity extends AppCompatActivity {
 
     private Button add;
     private Button replace;
@@ -17,6 +17,7 @@ public class MainActivity extends FragmentActivity {
     private FilmsList list;
 
     private FragmentTransaction transaction;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +50,7 @@ public class MainActivity extends FragmentActivity {
                         transaction.remove(page);
                         break;
                     case R.id.ReplaceFragment:
+
                         transaction.replace(R.id.content,new FilmsList());
                         transaction.addToBackStack(null);
                 }
